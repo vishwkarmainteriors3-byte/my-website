@@ -1,0 +1,353 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0b0b0b;
+    color: #ffffff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ===== GLOBAL LINK FIX ===== */
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ffd700;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+/* ===== HEADER ===== */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,215,0,0.15);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.logo h2 {
+    font-size: 22px;
+    color: #ffd700;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: #fff;
+    position: relative;
+}
+
+.nav-links li a:hover {
+    color: #ffd700;
+}
+
+.nav-links li a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+/* ===== HERO ===== */
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)),
+        url("../images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 20px 60px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #ffd700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+/* ===== HERO BUTTONS ===== */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.call-btn {
+    background: #111;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.call-btn:hover {
+    background: #ffd700;
+    color: #111;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5d;
+}
+
+/* ===== SECTIONS ===== */
+section {
+    padding: 110px 8%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 38px;
+    color: #ffd700;
+    margin-bottom: 40px;
+}
+
+/* ===== ABOUT ===== */
+.about p {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    color: #ddd;
+}
+
+/* ===== BOXES ===== */
+.service-boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.box {
+    background: #141414;
+    padding: 30px;
+    border-radius: 18px;
+    text-align: center;
+    transition: 0.4s;
+    border: 1px solid rgba(255,215,0,0.1);
+}
+
+.box:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+}
+
+.box h3 {
+    color: #ffd700;
+}
+
+/* ===== LUXURY BUTTON INSIDE BOX ===== */
+.box a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 26px;
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #ffd700;
+    background: transparent;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.box a:hover {
+    color: #111;
+    background: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6),
+                0 0 40px rgba(255, 215, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.box a:active {
+    transform: scale(0.96);
+}
+
+.box a:visited {
+    color: #ffd700;
+}
+
+/* Shine effect */
+.box a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.box a:hover::before {
+    left: 100%;
+}
+
+/* ===== GALLERY ===== */
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: 0.4s;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.08);
+}
+
+/* ===== CONTACT ===== */
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 8px 0;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #050505;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(255,215,0,0.1);
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    .hero-buttons,
+    .contact-buttons {
+        flex-direction: column;
+    }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
+}
